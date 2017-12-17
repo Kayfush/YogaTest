@@ -1,0 +1,135 @@
+.header {
+	background: white;
+	position: fixed;
+	z-index: 1000;
+	width: 100%;
+	&-menu {
+		&-item {
+			display: table-cell;
+			padding: 43px 0;
+			text-align: center;
+			&-mobile a {
+				color: #fff;
+				&:hover {
+					color: #555555;
+				}
+			}
+			&-mobile {
+				padding-top: 5px;
+    			position: relative;
+			}
+		}
+		&-link {
+			display: block;
+			color: #555555;
+			font-size: 14px;
+			font-family: 'OpenSans SemiBold', Sans-serif;
+			position: relative;
+			&:hover {
+				color: @primary-color;
+				&:before {
+				    left: 28%;	
+    				right: 28%;
+				}
+			}
+			&:before {
+			    content: "";
+			    position: absolute;
+			    z-index: -1;
+			    left: 50%;
+			    right: 50%;
+			    bottom: -6px;
+			    background: @primary-color;
+			    height: 1px;
+			    -webkit-transition-property: left, right;
+			    transition-property: left, right;
+			    -webkit-transition-duration: 0.3s;
+			    transition-duration: 0.3s;
+			    -webkit-transition-timing-function: ease-out;
+			    transition-timing-function: ease-out;
+
+			}
+		}
+		&-left {
+			display: table;
+		    list-style-type: none;
+		    padding-left: 11%;
+		    float: left;
+		    width: 34.18%;
+		}
+		.logo {
+			float: left;
+			padding: 0 11%;
+			&-img {
+				padding-top: 16px;
+			}
+			&-text {
+				display: block;
+				text-align: center;
+				padding-top: 8px;
+				font-size: 24px;
+				text-transform: uppercase;
+				font-family: "Champagne-Limousines-Bold", Sans-serif;
+				a {
+					color: @primary-color;
+				}
+			}
+		}
+		&-right {
+			    display: table;
+			    list-style-type: none;
+			    float: left;
+			    width: 34.8%;
+			    padding-right: 11%;
+		}
+		&-mobile {
+			display: none;
+			background: #5b6ceb;
+		    padding: 15px;
+		    width: 100%;
+		}
+	}
+	.logo-mobile {
+		background: white;
+		text-align: center;
+		display: none;
+		&-text {
+				display: block;
+				text-align: center;
+				padding-top: 8px;
+				font-size: 24px;
+				text-transform: uppercase;
+				font-family: "Champagne-Limousines-Bold", Sans-serif;
+				a {
+					color: @primary-color;
+				}
+			}
+	}
+}
+
+#btn-menu {
+	display: none;
+	&+label {
+		position: relative;
+	    color: #fff;
+	    height: 20px;
+	    z-index: 1;
+	    cursor: pointer;
+	    &:before {
+	    	content: '\f0c9';
+		    display: inline-block;
+		    font-family: 'FontAwesome';
+		    font-size: 22px;
+	    }
+	    &+.header-menu-list-mobile {
+	    	display: none;
+	    }
+	}
+	&:checked+label:before {
+		    content: '\f00d';
+    		color: #777777;
+	}
+	&:checked + label + .header-menu-list-mobile {
+		display: block;
+	}
+}
