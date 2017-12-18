@@ -49,4 +49,13 @@ $('[data-button-hover]').on('mouseenter', function() {
 }).on('mouseleave', function() {
     $('.prices-price-wrapper').removeClass('active');
 })
-    
+
+$(".header-menu-link").on("click", function() {
+    var href = $('#' + $.attr(this, 'href').split("#")[1]);
+    $root.animate({
+        scrollTop: $(href).offset().top + "px"
+    }, 500, function() {
+        window.location.hash = $(href).attr('id');
+    });
+    return false;
+})
